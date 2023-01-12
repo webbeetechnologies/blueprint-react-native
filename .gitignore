@@ -62,6 +62,4 @@ node_modules
 dist
 
 
-.yarn
 .yarn/cache
-.yarn/install-state.gz
