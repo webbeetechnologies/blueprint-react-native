@@ -2,7 +2,7 @@ import 'react-native';
 
 import { cleanup, render, screen } from '@testing-library/react-native';
 
-import { Example } from './index';
+import { Example } from './';
 
 afterEach(cleanup);
 
