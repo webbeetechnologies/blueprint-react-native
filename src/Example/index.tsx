@@ -1,18 +1,29 @@
-import { memo } from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { ButtonProps, useMolecules } from '@bambooapp/bamboo-molecules';
+import { FC, PropsWithChildren, useCallback, useState } from 'react';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    example: {
-        height: Dimensions.get('screen').height,
-        width: Dimensions.get('screen').width,
-        alignItems: 'center',
-        justifyContent: 'center',
+    text: {
+        alignSelf: 'center',
+        marginBottom: 'spacings.2',
     },
 });
-export const Example = memo(() => {
+
+export const Example: FC<PropsWithChildren<ButtonProps>> = ({ onPress, ...props }) => {
+    const { Button, Text, View } = useMolecules();
+    const [counter, setCounter] = useState(0);
+
+    const handlePress = useCallback(() => {
+        onPress?.();
+        setCounter(x => x + 1);
+    }, [onPress, setCounter]);
+
     return (
-        <View style={styles.example}>
-            <Text>Hello, we made it!</Text>
+        <View>
+            <Text style={styles.text}>Hello, we made it!</Text>
+            <Button variant="contained" {...props} onPress={handlePress}>
+                <Text>{`Clicked ${counter} times`}</Text>
+            </Button>
         </View>
     );
-});
+};
