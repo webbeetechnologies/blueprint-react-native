@@ -1,15 +1,13 @@
 import { ProvideMolecules } from '@bambooapp/bamboo-molecules';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Example } from './Example';
+import { NavigationContainer } from '~/Navigation';
 
 export default function () {
     return (
         <SafeAreaProvider>
             <ProvideMolecules>
-                <SafeAreaView>
-                    <Example />
-                </SafeAreaView>
+                <NavigationContainer />
             </ProvideMolecules>
         </SafeAreaProvider>
     );
