@@ -1,5 +1,5 @@
 import { ButtonProps, useMolecules } from '@bambooapp/bamboo-molecules';
-import { FC, PropsWithChildren, useCallback, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export const Example: FC<PropsWithChildren<ButtonProps>> = ({ onPress, ...props }) => {
+export const Example: FC<Omit<ButtonProps, 'children'>> = ({ onPress, ...props }) => {
     const { Button, Text, View } = useMolecules();
     const [counter, setCounter] = useState(0);
 
