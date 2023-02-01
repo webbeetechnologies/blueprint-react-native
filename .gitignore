@@ -62,4 +62,6 @@ node_modules
 dist
 
 
+cache
+coverage
 .yarn/cache
