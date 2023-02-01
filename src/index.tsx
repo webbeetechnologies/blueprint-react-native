@@ -1,3 +1,4 @@
+import { ProvideMolecules } from '@bambooapp/bamboo-molecules';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { Example } from './Example';
@@ -5,9 +6,11 @@ import { Example } from './Example';
 export default function () {
     return (
         <SafeAreaProvider>
-            <SafeAreaView>
-                <Example />
-            </SafeAreaView>
+            <ProvideMolecules>
+                <SafeAreaView>
+                    <Example />
+                </SafeAreaView>
+            </ProvideMolecules>
         </SafeAreaProvider>
     );
 }
