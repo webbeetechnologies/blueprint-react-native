@@ -25,7 +25,7 @@
     "package": "mkdir -p dist && npm pack --pack-destination=dist",
     "bundle": "yarn cleanup && bob build",
     "build": "yarn bundle && yarn package",
-    "coverage": "nyc report --reporter=html -t coverage --report-dir coverage/lcov-report",
+    "coverage": "cp coverage/storybook/coverage-storybook.json coverage/coverage-storybook.json && nyc report --reporter=html -t coverage --report-dir coverage/lcov-report",
     "test:coverage": "yarn test --coverage && yarn test-storybook --coverage && yarn coverage"
   },
   "files": [
