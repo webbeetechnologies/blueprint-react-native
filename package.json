@@ -1,6 +1,6 @@
 {
   "name": "@webbeetechnologies/frontend-starter-rn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publishConfig": {
     "private": "restricted",
     "main": "./lib/commonjs/index.js",
@@ -30,7 +30,9 @@
     "!src"
   ],
   "jest": {
-    "coverageReporters": ["json"],
+    "coverageReporters": [
+      "json"
+    ],
     "preset": "react-native",
     "setupFiles": [],
     "setupFilesAfterEnv": [
