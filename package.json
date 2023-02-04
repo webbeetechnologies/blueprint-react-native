@@ -1,6 +1,6 @@
 {
   "name": "@webbeetechnologies/frontend-starter-rn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publishConfig": {
     "private": "restricted",
     "main": "./lib/commonjs/index.js",
@@ -21,10 +21,7 @@
     "build-storybook": "build-storybook",
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
     "test-storybook": "test-storybook",
-    "cleanup": "rm -rf lib prepublish",
     "package": "mkdir -p dist && npm pack --pack-destination=dist",
-    "bundle": "yarn cleanup && bob build",
-    "build": "yarn bundle && yarn package",
     "coverage": "cp coverage/storybook/coverage-storybook.json coverage/coverage-storybook.json && nyc report --reporter=html -t coverage --report-dir coverage/lcov-report",
     "test:coverage": "yarn test --coverage && yarn test-storybook --coverage && yarn coverage"
   },
@@ -33,7 +30,9 @@
     "!src"
   ],
   "jest": {
-    "coverageReporters": ["json"],
+    "coverageReporters": [
+      "json"
+    ],
     "preset": "react-native",
     "setupFiles": [],
     "setupFilesAfterEnv": [
@@ -100,7 +99,6 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-native": "^0.70.5",
-    "react-native-builder-bob": "^0.17.1",
     "react-native-web": "^0.18.9",
     "react-test-renderer": "^18.2.0",
     "storybook-addon-performance": "^0.16.1",
