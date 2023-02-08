@@ -9,7 +9,6 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "postinstall": "yarn prepare:husky",
     "type-check": "tsc --noEmit",
     "prepare:husky": "husky install",
     "test": "jest",
