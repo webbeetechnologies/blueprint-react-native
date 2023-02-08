@@ -19,6 +19,6 @@ module.exports = function (api) {
     // ];
     return {
         // plugins,
-      presets: ['module:metro-react-native-babel-preset'],
+        presets: ['module:metro-react-native-babel-preset'],
     };
 };
