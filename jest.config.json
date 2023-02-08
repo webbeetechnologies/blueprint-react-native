@@ -1,0 +1,25 @@
+{
+    "coverageReporters": [
+        "json"
+    ],
+        "preset": "react-native",
+            "setupFiles": [],
+                "setupFilesAfterEnv": [
+                    "@testing-library/jest-native/extend-expect"
+                ],
+                    "cacheDirectory": "./cache/jest",
+                        "modulePathIgnorePatterns": [
+                            "<rootDir>/node_modules",
+                            "<rootDir>/lib/",
+                            "<rootDir>/dist/"
+                        ],
+                            "watchPathIgnorePatterns": [
+                                "__fixtures__\\/[^/]+\\/(output|error)\\.js"
+                            ],
+                                "transform": {
+        ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+    },
+    "transformIgnorePatterns": [
+        "node_modules/(?!(@react-native|react-native|react-native-super-grid|react-native-vector-icons|react-native-web-hooks|react-native-actions-sheet|@expo/vector-icons|expo-font|react-native-iphone-x-helper|react-native-super-grid|@bambooapp/*)/)"
+    ]
+}

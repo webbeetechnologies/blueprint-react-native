@@ -4,6 +4,12 @@ module.exports = function (api) {
         '@babel/plugin-proposal-export-namespace-from',
         'react-native-reanimated/plugin',
         [
+            'babel-plugin-root-import',
+            {
+                rootPathSuffix: 'src',
+            },
+        ],
+        [
             'module-resolver',
             {
                 root: ['./'],
@@ -18,7 +24,12 @@ module.exports = function (api) {
         ],
     ];
     return {
+        env: {
+            production: {
+                plugins: ['transform-remove-console'],
+            },
+        },
         plugins,
-        presets: ['babel-preset-expo'],
+        presets: ['module:metro-react-native-babel-preset'],
     };
 };
